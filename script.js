@@ -6,7 +6,8 @@ const fs = require('fs');
 function question1(){
     fs.readFile('./santa.txt', (err, data) => {
         const directions = data.toString();
-        console.log(directions);
+        const directionsArray = directions.split('');
+        console.log(directionsArray);
     })
 }
 
