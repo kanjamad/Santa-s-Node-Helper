@@ -7,7 +7,14 @@ function question1(){
     fs.readFile('./santa.txt', (err, data) => {
         const directions = data.toString();
         const directionsArray = directions.split('');
-        console.log(directionsArray);
+        const answer = directionsArray.reduce((acc, currentValue) => {
+            if (currentValue == '('){
+                return acc += 1
+            } else if (currentValue === ')'){
+                return acc -= 1
+            }
+        }, 0)
+        console.log('floor:', answer);
     })
 }
 
